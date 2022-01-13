@@ -23,7 +23,7 @@ export default class Memory {
 
   async write(address, type, buffer) {
     try {
-      await mem.writeMemory(this.getHandle().handle, address, buffer, type);
+      await mem.writeMemory(this.getProcess().handle, address, buffer, type);
     } catch (error) {
       log.error(`Failed writing to ${address}`);
     }
