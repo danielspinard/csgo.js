@@ -5,6 +5,10 @@ export default class Memory {
     return mem.openProcess('csgo.exe');
   }
 
+  async getModule(moduleName) {
+    return await mem.findModule(moduleName, this.getProcess().th32ProcessID);
+  }
+
   async read(address, type) {
     let result = null;
   
